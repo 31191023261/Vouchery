@@ -1,0 +1,214 @@
+body
+{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.wrapper
+{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+}
+.header, .footer, .nav-bar
+{
+    background-color: orange;
+    padding: 1rem;
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+}
+.header
+{
+    padding-top: 1rem !important;
+}
+.my-title
+{
+    float: left;
+}
+.menu-group
+{
+    float: right;
+    width: fit-content;
+}
+.my-button
+{
+    border: 1px solid black;
+    margin: 0px 0.5rem;
+    min-width: 40px;
+    min-height: 40px;
+}
+.nav-bar
+{
+    padding: 0.25rem !important;
+}
+.content
+{
+    flex-grow: 1;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.nav-bar, .title, .banner
+{
+    margin-bottom: 2rem;
+}
+.dynamic-container
+{
+    width: 80%;
+    margin: 0px auto;
+    height: fit-content;
+    overflow: hidden;
+}
+.nav-element
+{
+    text-align: center;
+    font-weight: 500;
+    padding: 0.1rem 1rem;
+}
+.dropdown
+{
+    width: fit-content;
+    position: absolute;
+    overflow: hidden;
+    box-shadow: 8px 16px;
+    z-index: 1;
+}
+.main-banner-img
+{
+    max-width: 100%;
+    height: auto;
+}
+.form-control
+{
+    border: 1px solid black;
+}
+.card-text
+{
+    color: red;
+    font-weight: 500;
+}
+
+.carousel-control-next,
+.carousel-control-prev
+{
+    filter: invert(100%);
+    width: 2rem;
+}
+
+.top-button-text
+{
+    color: black !important;
+}
+
+.top-button-text:hover
+{
+    text-decoration: none;
+}
+
+a:hover
+{
+    text-decoration: none;
+}
+
+
+@media only screen and (max-width: 960px) 
+{
+    #main-banner
+    {
+        margin-bottom: 1em;
+    }
+    #social-media-logo
+    {
+        float: left !important;
+        width: 100%;
+    }
+    .top-button-text
+    {
+        display: none;
+    }
+    .my-title, .menu-group
+    {
+        width: fit-content;
+        float: none;
+        margin: 0px auto;
+    }
+    .my-title
+    {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Details page */
+
+.product-preview-img
+{
+    max-width: 100%;
+}
+
+.product-review-article-img
+{
+    max-width: 100%;
+    margin: 1rem auto;
+}
+.add-to-cart-button
+{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1rem;
+    width: 100%;
+}
+
+@media only screen and (max-width: 960px) 
+{
+    .product-right-div-inside
+    {
+        display: block !important;
+    }
+    .product-right-div
+    {
+        display: none;
+    }
+}
+
+/* Cart page */
+.cart-table
+{
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 3rem;
+}
+.cart-table td
+{
+    text-align: center;
+    vertical-align: middle;
+    height: 100%;
+}
+.cart-table-quantity-complex
+{
+    margin: 0px auto; 
+    width: fit-content; 
+    min-height: 100%; 
+    vertical-align: middle;
+}
+
+/* Search page */
+.results-holder
+{
+    overflow: hidden;
+}
+.result-holder
+{
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+}
+.cate-button{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.cate-name{
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}

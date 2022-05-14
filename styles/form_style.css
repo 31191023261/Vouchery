@@ -1,0 +1,54 @@
+.card-wrapper {
+	width: 400px;
+}
+
+.card {
+	border-color: transparent;
+	box-shadow: 0 4px 8px rgba(0,0,0,.05);
+}
+
+.card.fat {
+	background-color:orange ;
+	padding: 10px;
+}
+
+.card .card-title {
+	max-width: 400px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.card-name-title{
+	max-width: 500px;
+	text-align: center;
+}
+
+.form-control {
+	border-width: 2.3px;
+}
+
+.form-group label {
+	font-weight: bold;
+	width: 100%;
+}
+
+.btn.btn-block {
+	padding: 12px 10px;
+}
+
+@media screen and (max-width: 425px) {
+	.card-wrapper {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.card.fat {
+		padding: 0;
+	}
+
+	.card.fat .card-body {
+		padding: 15px;
+	}
+}
