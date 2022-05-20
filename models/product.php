@@ -3,37 +3,34 @@ class Product{
     private $product_id;
     private $product_name;
     private $product_price;
-    private $category_id;
-    private $product_highlighted;
+    private $place_id;
+    private $type_id;
     private $product_thumbnail;
-    private $product_producer;
-    private $product_origin;
-    private $product_maintenance;
-    private $product_preview;
+    private $user_id;
+    private $product_details;
+    private $product_instruction;
 
     public function getproduct_id(){return $this->product_id; }
     public function getproduct_name(){return $this->product_name; }
     public function getproduct_price(){return $this->product_price; }
-    public function getcategory_id(){return $this->category_id; }
-    public function getproduct_highlighted(){return $this->product_highlighted; }
-    public function getproduct_producer(){return $this->product_producer; }
-    public function getproduct_origin(){return $this->product_origin; }
-    public function getproduct_maintenance(){return $this->product_maintenance; }
+    public function getplace_id(){return $this->place_id; }
+    public function getype_id(){return $this->type_id; }
+    public function getuser_id(){return $this->user_id; }
+    public function getproduct_details(){return $this->product_details; }
     public function getproduct_thumbnail(){return $this->product_thumbnail; }
-    public function getproduct_preview(){return $this->product_preview; }
+    public function getproduct_instruction(){return $this->product_instruction; }
 
-    public function __construct($product_id,$product_name, $product_price, $category_id,$product_highlighted,
-    $product_thumbnail,$product_producer,$product_origin,$product_maintenance,$product_preview){
+    public function __construct($product_id,$product_name, $product_price, $place_id,$type_id,
+    $product_thumbnail,$user_id,$product_details,$product_instruction){
         $this->product_id = $product_id;
         $this->product_name = $product_name;
         $this->product_price = $product_price;
-        $this->category_id = $category_id;
-        $this->product_highlighted = $product_highlighted;
+        $this->place_id = $place_id;
+        $this->type_id = $type_id;
         $this->product_thumbnail = $product_thumbnail;
-        $this->product_producer = $product_producer;
-        $this->product_origin = $product_origin;
-        $this->product_maintenance =$product_maintenance;
-        $this->product_preview =$product_preview;
+        $this->user_id = $user_id;
+        $this->product_details = $product_details;
+        $this->product_instruction =$product_instruction;
         
     }
 }   

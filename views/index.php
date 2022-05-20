@@ -8,7 +8,7 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/ulg/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="/styles/style.css">
+        <link rel="stylesheet" href="/dashboard/vouchery/styles/style.css">
         <script src="/scripts/script.js"></script>
     </head>
     <body>
@@ -47,14 +47,14 @@
                 <div class="dynamic-container">
                     <div class="row">
                         <div class="col-6 col-lg-3 nav-element">
-                            <i class="bi-phone"></i>
-                            <label>ĐIỆN THOẠI DI ĐỘNG</label>
-                            <a href="phone_category.php" class="stretched-link"></a>
+                            <i class="bi-shopee"></i>
+                            <label>Shopee</label>
+                            <a href="category.php?placeid=shopee" class="stretched-link"></a>
                         </div>
                         <div class="col-6 col-lg-3 nav-element">
-                            <i class="bi-tablet"></i>
-                            <label>MÁY TÍNH BẢNG</label>
-                            <a href="tablet_category.php" class="stretched-link"></a>
+                            <i class="bi-lazada"></i>
+                            <label>Lazada</label>
+                            <a href="category.php?placeid=lazada" class="stretched-link"></a>
                         </div>
                         <div class="col-6 col-lg-3 nav-element">
                             <i class="bi-laptop"></i>
@@ -72,100 +72,18 @@
 
             <main class="content dynamic-container">
 
-                <div class="banner row">
-                    <div id="main-banner" class="col-12 col-lg-8">
-                        <div id="banner-carousel" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">                  
-                            <?php 
-                                require_once($_SERVER['DOCUMENT_ROOT']."/controllers/index_controller.php");
-                                $controller = new IndexController();
-                                $controller->special_offer_invoke(3);
-                            ?>
-                            </div>
-                            <a class="carousel-control-prev" href="#banner-carousel" role="button" data-slide="prev">
-                              <span class="carousel-control-prev-icon"></span>
-                            </a>
-                            <a class="carousel-control-next" href="#banner-carousel" role="button" data-slide="next">
-                              <span class="carousel-control-next-icon"></span>
-                            </a>
-                          </div>
-                    </div>
-                    <div style="min-height: 100%;" class="col-12 col-lg-4">      
-                        <?php 
-                            require_once($_SERVER['DOCUMENT_ROOT']."/controllers/index_controller.php");
-                            $controller = new IndexController();
-                            $controller->special_offer_invoke(2); 
-                        ?>
-                    </div>
-                </div>
-
-                <h3 class="title">Điện thoại nổi bật</h3>
+                <h3 class="title">Voucher nổi bật</h3>
                 <div id="phones-carousel" style="min-height: 425px;" class="carousel slide my-carousel" data-ride="carousel">
                     <div class="carousel-inner">
                         <?php 
-                            require_once($_SERVER['DOCUMENT_ROOT']."/controllers/index_controller.php");
+                            require_once($_SERVER['DOCUMENT_ROOT']."/dashboard/vouchery/controllers/index_controller.php");
                             $controller = new IndexController();
-                            $controller->product_invoke("Điện thoại di động");
+                            $controller->product_invoke();
                         ?>
                     </div>
-                    <a class="carousel-control-prev" href="#phones-carousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#phones-carousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
                 </div>
 
-                <h3 class="title">Máy tính bảng nổi bật</h3>
-                <div id="tablet-carousel" class="carousel slide my-carousel" data-ride="carousel">
-                    <div class="carousel-inner">
-                    <?php 
-                        require_once($_SERVER['DOCUMENT_ROOT']."/controllers/index_controller.php");
-                        $controller = new IndexController();
-                        $controller->product_invoke("Máy tính bảng");         
-                    ?>
-                    </div>
-                    <a class="carousel-control-prev" href="#tablet-carousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#tablet-carousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
-                </div>
-
-                <h3 class="title">Laptop nổi bật</h3>
-                <div id="laptop-carousel" class="carousel slide my-carousel" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <?php 
-                            require_once($_SERVER['DOCUMENT_ROOT']."/controllers/index_controller.php");
-                            $controller = new IndexController();
-                            $controller->product_invoke("Máy tính xách tay");         
-                        ?>
-                    </div>
-                    <a class="carousel-control-prev" href="#laptop-carousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#laptop-carousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
-                </div>
-
-                <h3 class="title">Phụ kiện nổi bật</h3>
-                <div id="accessories-carousel" class="carousel slide my-carousel" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <?php 
-                            require_once($_SERVER['DOCUMENT_ROOT']."/controllers/index_controller.php");
-                            $controller = new IndexController();
-                            $controller->product_invoke("Phụ kiện");
-                        ?>
-                    </div>
-                    <a class="carousel-control-prev" href="#accessories-carousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#accessories-carousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
-                </div>
+                
 
             </main>
 

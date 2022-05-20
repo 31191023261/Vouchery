@@ -75,15 +75,10 @@
                 echo '<h3 style="margin-bottom: 1rem;">Kết quả tìm kiếm cho "'. $_GET["keyword"] .'"</h3>';
                 ?>
                 <div style="margin-bottom: 1rem;" id="result-categories">
-                    <?php
-                    require_once ($_SERVER['DOCUMENT_ROOT']."/controllers/search_controller.php");
-                    $controller = new SearchController();
-                    $controller->search_invoke_for_buttons();
-                    ?>
                 </div>
                 <div id="results-holder" class="results-holder">
                     <?php
-                    require_once ($_SERVER['DOCUMENT_ROOT']."/controllers/search_controller.php");
+                    require_once ($_SERVER['DOCUMENT_ROOT']."/dashboard/vouchery/controllers/search_controller.php");
                     $controller = new SearchController();
                     $controller->search_invoke($_GET['keyword']);
                     ?>

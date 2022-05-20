@@ -8,7 +8,7 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/ulg/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="/styles/style.css">
+        <link rel="stylesheet" href="/dashboard/vouchery/styles/style.css">
         <script src="/scripts/script.js"></script>
     </head>
     <body>
@@ -71,68 +71,12 @@
             </nav>
 
             <main class="content dynamic-container">
-                <h3 style="width: fit-content; margin: 0 auto 1rem auto;">Máy tính bảng</h3>
-                <button class="btn my-button" onclick="queryToggle()">
-                    <i class="bi-filter"></i>
-                    Bộ lọc 
-                </button>
-                <div style="margin: 1rem 0 1rem 0; width: 100%;" id="sort-and-query">
-                    <form method="get" action="">
-                        <div style="width: 100%; margin: 1rem;" class="row">
-                            <div class="col-lg-3 col-6">
-                                <label style="font-weight: 500;">Sắp xếp</label><br/>
-                                <input type="checkbox" id="minmax" name="minmax" style="margin: 0.5rem;" value="1"><label>Giá từ cao đến thấp</label><br/>
-                                <input type="checkbox" id="minmax" name="minmax" style="margin: 0.5rem;" value="2"><label>Giá từ thấp đến cao</label><br/>
-                            </div>
-                            <div class="col-lg-3 col-6">
-                                <label style="font-weight: 500;">Giá</label><br/>
-                                <input type="checkbox" name="price[]" value="<3"    style="margin: 0.5rem;"><label>Dưới 3 triệu</label><br/>
-                                <input type="checkbox" name="price[]" value="3-8"   style="margin: 0.5rem;"><label>Từ 3 đến 8 triệu</label><br/>
-                                <input type="checkbox" name="price[]" value="8-15"  style="margin: 0.5rem;"><label>Từ 8 đến 15 triệu</label><br/>
-                                <input type="checkbox" name="price[]" value=">15"   style="margin: 0.5rem;"><label>Trên 15 triệu</label><br/>
-                            </div>
-                            <div class="col-lg-2 col-6">
-                                <label style="font-weight: 500;">Brand</label><br/>
-                                <input type="checkbox" name="brand[]" value="Apple"  style="margin: 0.5rem;"><label>Apple</label><br/>
-                                <input type="checkbox" name="brand[]" value="Samsung"  style="margin: 0.5rem;"><label>Samsung</label><br/>
-                                <input type="checkbox" name="brand[]" value="Huawei"  style="margin: 0.5rem;"><label>Huawei</label><br/>
-                                <input type="checkbox" name="brand[]" value="Lenovo" style="margin: 0.5rem;"><label>Lenovo</label><br/>
-                
-                            </div>
-                            <div class="col-lg-2 col-6">
-                                <label style="font-weight: 500;">RAM</label><br/>
-                                <input type="checkbox"  name="ram[]" value="2" style="margin: 0.5rem;"><label>2GB</label><br/>
-                                <input type="checkbox"  name="ram[]" value="3" style="margin: 0.5rem;"><label>3GB</label><br/>
-                                <input type="checkbox"  name="ram[]" value="4" style="margin: 0.5rem;"><label>4GB</label><br/>
-                                <input type="checkbox"  name="ram[]" value="6" style="margin: 0.5rem;"><label>6GB</label><br/>
-                                <input type="checkbox"  name="ram[]" value="8" style="margin: 0.5rem;"><label>8GB</label><br/>
-                            </div>
-                            <div class="col-lg-2 col-6">
-                                <label style="font-weight: 500;">Bộ nhớ trong</label><br/>
-                                <input type="checkbox" name="bnt[]" value="32"  style="margin: 0.5rem;"><label>32GB</label><br/>
-                                <input type="checkbox" name="bnt[]" value="64"  style="margin: 0.5rem;"><label>64GB</label><br/>
-                                <input type="checkbox" name="bnt[]" value="128" style="margin: 0.5rem;"><label>128GB</label><br/>                             
-                            </div>
-                        </div>
-                        <button type="submit" value="submit" name="submit" class="btn btn-primary" style="margin: 1rem;">Áp dụng</button>
-                    </form>
-                    
-                </div>
                 <div id="products-holder" class="products-holder row">
-<?php
-                if(isset($_GET['submit'])){
-                    require_once($_SERVER['DOCUMENT_ROOT']."/controllers/filter_controller.php");
+                <?php
+                    require_once($_SERVER['DOCUMENT_ROOT']."/dashboard/vouchery/controllers/filter_controller.php");
                     $controller = new FilterController();
-                    $controller->tablet_category_invoke("filter");
-                }
-                else{
-                    require_once($_SERVER['DOCUMENT_ROOT']."/controllers/filter_controller.php");
-                    $controller = new FilterController();
-                    $controller->tablet_category_invoke("all");
-                }
-            
-?>
-               
+                    $controller->category_invoke();
+                ?>
                 </div>
             </main>
 
